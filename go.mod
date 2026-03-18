@@ -1,4 +1,4 @@
-module github.com/greyone/yango-client-go
+module github.com/grey0ne/yango-grocery-client-go
 
 go 1.24.0
 
