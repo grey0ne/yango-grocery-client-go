@@ -1,17 +1,11 @@
-# yango-client-go
+# yango-grocery-client-go
 
 Reusable Go client for the Yango API. Encapsulates retries, batching, error handling, auth headers, and OpenTelemetry.
 
 ## Installation
 
 ```bash
-go get github.com/greyone/yango-client-go
-```
-
-If the module lives in a private repo or local path, use a `replace` in your `go.mod`:
-
-```go
-replace github.com/greyone/yango-client-go => /path/to/yango-client-go
+go get github.com/grey0ne/yango-grocery-client-go
 ```
 
 ## Quick start
@@ -23,8 +17,8 @@ import (
     "context"
     "log"
 
-    "github.com/greyone/yango-client-go/client"
-    "github.com/greyone/yango-client-go/models"
+    "github.com/grey0ne/yango-grocery-client-go/client"
+    "github.com/grey0ne/yango-grocery-client-go/models"
 )
 
 func main() {
@@ -99,7 +93,7 @@ if err != nil {
 Errors are typed; use helpers to inspect them:
 
 ```go
-import "github.com/greyone/yango-client-go/errors"
+import "github.com/grey0ne/yango-grocery-client-go/errors"
 
 resp, err := c.ProductsQuery(ctx, req)
 if err != nil {
@@ -124,7 +118,7 @@ if err != nil {
 Fetch media for many products with limited concurrency:
 
 ```go
-import "github.com/greyone/yango-client-go/batch"
+import "github.com/grey0ne/yango-grocery-client-go/batch"
 
 productIDs := []string{"id1", "id2", "id3"}
 mediaByProduct, result := batch.MediaListBatch(ctx, c, productIDs, batch.MediaListBatchOptions{
@@ -145,8 +139,8 @@ if result.Failed > 0 {
 For non-idempotent methods (e.g. POST), set an idempotency key so retries are safe:
 
 ```go
-import "github.com/greyone/yango-client-go/client"
-import "github.com/greyone/yango-client-go/idempotency"
+import "github.com/grey0ne/yango-grocery-client-go/client"
+import "github.com/grey0ne/yango-grocery-client-go/idempotency"
 
 key, _ := idempotency.Key("catalog-sync", payload)
 err := c.PostJSON(ctx, "/some/endpoint", body, &out, client.WithIdempotencyKey(key))

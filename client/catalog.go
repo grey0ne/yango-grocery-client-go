@@ -3,7 +3,7 @@ package client
 import (
 	"context"
 
-	"github.com/greyone/yango-client-go/models"
+	"github.com/grey0ne/yango-grocery-client-go/models"
 )
 
 const (

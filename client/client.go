@@ -10,8 +10,8 @@ import (
 	"path"
 	"time"
 
-	"github.com/greyone/yango-client-go/errors"
-	"github.com/greyone/yango-client-go/internal/httpx"
+	"github.com/grey0ne/yango-grocery-client-go/errors"
+	"github.com/grey0ne/yango-grocery-client-go/internal/httpx"
 	"go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp"
 )
 
