@@ -5,7 +5,7 @@ import (
 	"sync"
 
 	"github.com/grey0ne/yango-grocery-client-go/client"
-	"github.com/greyone/yango-grocery-client-go/models"
+	"github.com/grey0ne/yango-grocery-client-go/models"
 )
 
 // BatchResult holds the aggregated result of a batched operation.
